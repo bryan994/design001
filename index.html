@@ -5,12 +5,159 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Design001</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    
-    
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
+    <div class="d-flex w-100">
+        <div class="left-content">
+            <a href="" class="logo d-flex justify-content-center align-items-center">Logo</a>
+            <div class="nav d-flex flex-column px-4 mt-4">
+                <a href="#" class="nav-item"><i class="bi bi-house-fill"></i>Dashboard</a>
+                <a href="#" class="nav-item"><i class="bi bi-boxes"></i>Widgets</a>
+                <a href="#" class="nav-item"><i class="bi bi-graph-up-arrow"></i>Charts</a>
+                <a href="#" class="nav-item"><i class="bi bi-map-fill"></i>Maps</a>
+                <a href="#" class="nav-item"><i class="bi bi-gear-fill"></i>Setting</a>
+                <a href="#" class="nav-item"><i class="bi bi-table"></i>Tables</a>
+                <a href="#" class="nav-item"><i class="bi bi-calendar-check-fill"></i>Calendar</a>
+                <a href="#" class="nav-item"><i class="bi bi-cart-check-fill"></i>E-commerce</a>
+                <a href="#" class="nav-item"><i class="bi bi-activity"></i>Activity</a>
+                <a href="#" class="nav-item"><i class="bi bi-file-earmark-fill"></i>Documentations</a>
+                <a href="#" class="nav-item"><i class="bi bi-people-fill"></i>User</a>
+                <a href="#" class="nav-item"><i class="bi bi-key-fill"></i>Password</a>
+            </div>
+        </div>
+        <div class="right-content">
+            <div class="header d-flex align-items-center px-2">
+                <a href="" class="me-auto"><i class="bi bi-list"></i></a>
+                <a href=""><i class="bi bi-bell-fill"></i></a>
+                <a href=""><i class="bi bi-envelope-fill"></i></a>
+                <a href=""><i class="bi bi-people-fill"></i></a>
+                <a href=""><i class="bi bi-gear-fill"></i></a>
+            </div>
+            <div class="content d-flex flex-wrap">
+                <div class="col-lg-8 content-item p-4">
+                    <div class="col-lg-4 d-flex flex-column">
+                        <span class="content-title">Dashboard</span>
+                        <span class="content-desc">This month report</span>
+                        <p class="content-info">
+                            <span class="content-num">$57348.12</span>
+                            <span class="content-desc">This month revenue</span>    
+                        </p>
+                        <p class="content-info">
+                            <span class="content-num">102</span>
+                            <span class="content-desc">This month revenue</span>    
+                        </p>
+
+                    </div>
+                    <div class="col-lg-8">
+                        <canvas id="myLine" style="width:100%;max-width:600px"></canvas>
+                    </div>
+                </div>
+                <div class="content-item flex-fill">
+                    <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+                </div>
+            </div>
+            <div class="content row">
+                <div class="content-item col-sm-6 col-lg-3 mb-3 mb-lg-5">123</div>
+                <div class="content-item col-sm-6 col-lg-3 mb-3 mb-lg-5">123</div>
+                <div class="content-item col-sm-6 col-lg-3 mb-3 mb-lg-5">123</div>
+                <div class="content-item col-sm-6 col-lg-3 mb-3 mb-lg-5">132</div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.8.0/dist/chart.min.js"></script>
+    <script>
+        var xValues = ["Italy", "France", "Spain", "USA", "Argentina"];
+        var yValues = [55, 49, 44, 24, 15];
+        var barColors = [
+          "#b91d47",
+          "#00aba9",
+          "#2b5797",
+          "#e8c3b9",
+          "#1e7145"
+        ];
+        
+        new Chart("myChart", {
+          type: "doughnut",
+          data: {
+            labels: xValues,
+            datasets: [{
+              backgroundColor: barColors,
+              data: yValues
+            }]
+          },
+          options: {
+            title: {
+              display: true,
+              text: "World Wide Wine Production 2018"
+            }
+          }
+        });
+        
+
+
+        function getGradient(ctx, chartArea) {
+            var gradient = ctx.createLinearGradient(0, chartArea.bottom, 0, chartArea.top);
+            gradient.addColorStop(0, 'blue');
+            gradient.addColorStop(0.5, 'yellow');
+            gradient.addColorStop(1, 'red');
+          
+          return gradient;
+        }
+        const data = {
+            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+            datasets: [
+            {
+                axis: 'y',
+                label: 'My First Dataset',
+                data: [0, 65, 59, 80, 81, 56, 55, 40],
+                borderColor: function(context) {
+                    const chart = context.chart;
+                    const {ctx, chartArea} = chart;
+            
+                    if (!chartArea) {
+                      // This case happens on initial chart load
+                      return null;
+                    }
+                    return getGradient(ctx, chartArea);
+                  },
+                borderWidth: 2
+            },
+            {
+                axis: 'y',
+                label: 'My Second Dataset',
+                data: [0, 2, 39, 20, 71, 42, 9, 40],
+                borderColor: function(context) {
+                    const chart = context.chart;
+                    const {ctx, chartArea} = chart;
+            
+                    if (!chartArea) {
+                      // This case happens on initial chart load
+                      return null;
+                    }
+                    return getGradient(ctx, chartArea);
+                  },
+                borderWidth: 2
+            },
+            ]
+        };
+
+        new Chart("myLine", {
+            type: "line",
+            data: data,
+            options: {
+                responsive: true,
+                plugins: {
+                  legend: {
+                    position: 'top',
+                  },
+                  title: {
+                    display: true,
+                    text: 'Chart.js Line Chart'
+                  }
+                }
+              },
+          });
+        </script>
 </body>
 </html>

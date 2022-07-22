@@ -1,0 +1,30 @@
+{
+  "name": "design001",
+  "version": "1.0.0",
+  "description": "Design001",
+  "main": "index.js",
+  "directories": {
+    "example": "example"
+  },
+  "scripts": {
+    "compile:sass": "sass --watch scss/custom.scss css/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/ifes3/design001.git"
+  },
+  "keywords": [
+    "Design001"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/ifes3/design001/issues"
+  },
+  "homepage": "https://gitlab.com/ifes3/design001#readme",
+  "dependencies": {
+    "bootstrap": "^5.2.0-beta1",
+    "bootstrap-icons": "^1.9.1",
+    "sass": "^1.53.0"
+  }
+}

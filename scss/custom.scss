@@ -1,0 +1,107 @@
+// Bootstrap functions
+@import "../node_modules/bootstrap/scss/functions";
+
+// Default variables
+$primary: red;
+$secondary: #eee;
+$danger: blue;
+$info: yellow;
+$body-bg: #fff;
+$link-decoration: none;
+$enable-shadows: true;
+$prefix: "bs-";
+$header-height: 3rem;
+
+// Bootstrap required
+@import "../node_modules/bootstrap/scss/variables";
+$gradient: linear-gradient(to bottom right, $blue-200, $blue-500, $blue-700);
+
+@import "../node_modules/bootstrap/scss/maps";
+@import "../node_modules/bootstrap/scss/mixins";
+@import "../node_modules/bootstrap/scss/root";
+
+// Bootstrap components
+@import "../node_modules/bootstrap/scss/grid";
+@import "../node_modules/bootstrap/scss/buttons";
+
+// Bootstrap utilities must include with api
+@import "../node_modules/bootstrap/scss/utilities";
+@import "../node_modules/bootstrap/scss/utilities/api";
+@import "../node_modules/bootstrap/scss/reboot";
+@import "../node_modules/bootstrap/scss/containers";
+@import "../node_modules/bootstrap/scss/grid";
+
+$bootstrap-icons-font-dir: '../node_modules/bootstrap-icons/font/fonts';
+@import "../node_modules/bootstrap-icons/font/bootstrap-icons";
+
+// Custom code
+html {
+    font-family: sans-serif;
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -ms-overflow-style: scrollbar;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+html, body {
+    font-size: 15px;
+    color: $gray-700;
+}
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 1rem;
+    font-weight: normal;
+    line-height: 1.5;
+    margin: 0;
+    display: flex;
+    min-height: 100%;
+    color: #212529;
+    text-align: left;
+    background-color: #fff;
+}
+a, a:hover {
+    text-decoration: $link-decoration;
+    color: $gray-700;
+}
+
+i {
+    color: $gray-500;
+    margin-right: .6rem;
+}
+.left-content {
+    flex: 0 0 14.6rem;
+    z-index: 1;
+}
+
+.right-content {
+    background-color: $gray-100;
+    flex: 1;
+}
+.logo {
+    background-image: $gradient;
+    color: #fff;
+    height: $header-height;
+}
+.header {
+    height: $header-height;
+    background-color: #fff;
+    box-shadow: 0 0 0.5rem $gray-200;
+}
+.nav {
+    box-shadow: .5rem 0 .8rem -1rem $gray-200;
+    &-item {
+        padding: .8rem .5rem;
+        margin-bottom: .5rem;
+        font-size: .9rem;
+    }
+}
+
+.content {
+    padding: 1rem;
+    &-item {
+        display: flex;
+        background-color: #fff;
+        border: 1px solid #fff;
+        border-radius: .5rem;
+    }
+}
