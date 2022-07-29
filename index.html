@@ -1,163 +1,211 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Design001</title>
-    <link rel="stylesheet" href="css/style.css">
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Design001</title>
+	<link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-    <div class="d-flex w-100">
-        <div class="left-content">
-            <a href="" class="logo d-flex justify-content-center align-items-center">Logo</a>
-            <div class="nav d-flex flex-column px-4 mt-4">
-                <a href="#" class="nav-item"><i class="bi bi-house-fill"></i>Dashboard</a>
-                <a href="#" class="nav-item"><i class="bi bi-boxes"></i>Widgets</a>
-                <a href="#" class="nav-item"><i class="bi bi-graph-up-arrow"></i>Charts</a>
-                <a href="#" class="nav-item"><i class="bi bi-map-fill"></i>Maps</a>
-                <a href="#" class="nav-item"><i class="bi bi-gear-fill"></i>Setting</a>
-                <a href="#" class="nav-item"><i class="bi bi-table"></i>Tables</a>
-                <a href="#" class="nav-item"><i class="bi bi-calendar-check-fill"></i>Calendar</a>
-                <a href="#" class="nav-item"><i class="bi bi-cart-check-fill"></i>E-commerce</a>
-                <a href="#" class="nav-item"><i class="bi bi-activity"></i>Activity</a>
-                <a href="#" class="nav-item"><i class="bi bi-file-earmark-fill"></i>Documentations</a>
-                <a href="#" class="nav-item"><i class="bi bi-people-fill"></i>User</a>
-                <a href="#" class="nav-item"><i class="bi bi-key-fill"></i>Password</a>
-            </div>
-        </div>
-        <div class="right-content">
-            <div class="header d-flex align-items-center px-2">
-                <a href="" class="me-auto"><i class="bi bi-list"></i></a>
-                <a href=""><i class="bi bi-bell-fill"></i></a>
-                <a href=""><i class="bi bi-envelope-fill"></i></a>
-                <a href=""><i class="bi bi-people-fill"></i></a>
-                <a href=""><i class="bi bi-gear-fill"></i></a>
-            </div>
-            <div class="content d-flex flex-wrap">
-                <div class="col-lg-8 content-item p-4">
-                    <div class="col-lg-4 d-flex flex-column">
-                        <span class="content-title">Dashboard</span>
-                        <span class="content-desc">This month report</span>
-                        <p class="content-info">
-                            <span class="content-num">$57348.12</span>
-                            <span class="content-desc">This month revenue</span>    
-                        </p>
-                        <p class="content-info">
-                            <span class="content-num">102</span>
-                            <span class="content-desc">This month revenue</span>    
-                        </p>
+	<div class="navbar position-fixed top-0 left-0 bottom-0">
+		<a href="" class="logo d-flex justify-content-center align-items-center">Logo</a>
+		<div class="nav d-flex flex-column px-4 mt-4">
+			<a href="#" class="nav-item"><i class="bi bi-house-fill"></i>Dashboard</a>
+			<a href="#" class="nav-item"><i class="bi bi-boxes"></i>Widgets</a>
+			<a href="#" class="nav-item"><i class="bi bi-graph-up-arrow"></i>Charts</a>
+			<a href="#" class="nav-item"><i class="bi bi-map-fill"></i>Maps</a>
+			<a href="#" class="nav-item"><i class="bi bi-gear-fill"></i>Setting</a>
+			<a href="#" class="nav-item"><i class="bi bi-table"></i>Tables</a>
+			<a href="#" class="nav-item"><i class="bi bi-calendar-check-fill"></i>Calendar</a>
+			<a href="#" class="nav-item"><i class="bi bi-cart-check-fill"></i>E-commerce</a>
+			<a href="#" class="nav-item"><i class="bi bi-activity"></i>Activity</a>
+			<a href="#" class="nav-item"><i class="bi bi-file-earmark-fill"></i>Documentations</a>
+			<a href="#" class="nav-item"><i class="bi bi-people-fill"></i>User</a>
+			<a href="#" class="nav-item"><i class="bi bi-key-fill"></i>Password</a>
+		</div>
+	</div>
+	<div class="content">
+		<div class="header d-flex align-items-center px-2">
+			<a href="" class="me-auto"><i class="bi bi-list"></i></a>
+			<a href=""><i class="bi bi-bell-fill"></i></a>
+			<a href=""><i class="bi bi-envelope-fill"></i></a>
+			<a href=""><i class="bi bi-people-fill"></i></a>
+			<a href=""><i class="bi bi-gear-fill"></i></a>
+		</div>
+		<main class="main">
+			<div class="container-fluid p-4">
+				<div class="row">
+					<div class="col-lg-8 col-md-12 mb-4">
+						<div class="card p-4 h-100">
+							<div class="row">
+								<div
+									class="col-lg-4 col-sm-3 col-12 d-flex flex-row flex-sm-column justify-content-around justify-content-sm-center">
+									<div className="d-flex flex-column justify-content-center me-3 me-sm-0">
+										<p class="content-info d-flex flex-column">
+											<span class="content-title">Dashboard</span>
+											<span class="content-desc">This month report</span>
+										</p>
+										<p class="content-info d-flex flex-column">
+											<span class="content-num">$57348.12</span>
+											<span class="content-desc">This month revenue</span>
+										</p>
+									</div>
+									<div className="d-flex flex-column justify-content-center">
+										<p class="content-info d-flex flex-column">
+											<span class="content-num">102</span>
+											<span class="content-desc">This month revenue</span>
+										</p>
+										<button class="btn btn-lg btn-primary">Last Month Summary</button>
+									</div>
+								</div>
+								<div class="col-lg-8 col-sm-9 d-flex justify-content-center">
+									<canvas id="myLine" style="width:100%;max-height: 20rem;"></canvas>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-12 mb-4">
+						<div class="card d-flex justify-content-center h-100 align-items-center">
+							<canvas id="myChart" style="width: 100%;max-width: 20rem;max-height: 18rem;"></canvas>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-3 col-sm-6 mb-4">
+						<div class="card">
+							123
+						</div>
+					</div>
+					<div class="col-lg-3 col-sm-6 mb-4">
+						<div class="card">
+							123
+						</div>
+					</div>
+					<div class="col-lg-3 col-sm-6 mb-4">
+						<div class="card">
+							123
+						</div>
+					</div>
+					<div class="col-lg-3 col-sm-6 mb-4">
+						<div class="card">
+							123
+						</div>
+					</div>
+				</div>
+			</div>
 
-                    </div>
-                    <div class="col-lg-8">
-                        <canvas id="myLine" style="width:100%;max-width:600px"></canvas>
-                    </div>
-                </div>
-                <div class="content-item flex-fill">
-                    <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
-                </div>
-            </div>
-            <div class="content row">
-                <div class="content-item col-sm-6 col-lg-3 mb-3 mb-lg-5">123</div>
-                <div class="content-item col-sm-6 col-lg-3 mb-3 mb-lg-5">123</div>
-                <div class="content-item col-sm-6 col-lg-3 mb-3 mb-lg-5">123</div>
-                <div class="content-item col-sm-6 col-lg-3 mb-3 mb-lg-5">132</div>
-            </div>
-        </div>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.8.0/dist/chart.min.js"></script>
-    <script>
-        var xValues = ["Italy", "France", "Spain", "USA", "Argentina"];
-        var yValues = [55, 49, 44, 24, 15];
-        var barColors = [
-          "#b91d47",
-          "#00aba9",
-          "#2b5797",
-          "#e8c3b9",
-          "#1e7145"
-        ];
-        
-        new Chart("myChart", {
-          type: "doughnut",
-          data: {
-            labels: xValues,
-            datasets: [{
-              backgroundColor: barColors,
-              data: yValues
-            }]
-          },
-          options: {
-            title: {
-              display: true,
-              text: "World Wide Wine Production 2018"
-            }
-          }
-        });
-        
+		</main>
+	</div>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js@3.8.0/dist/chart.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+		integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+	<script>
+		// Chart js
+		var xValues = ["Italy", "France", "Spain"];
+		var yValues = [50, 14, 34];
+		var barColors = [
+			"#efadce",
+			"#de5c9d",
+			"#ab296a",
+		];
+
+		new Chart("myChart", {
+			type: "doughnut",
+			data: {
+				labels: xValues,
+				datasets: [{
+					backgroundColor: barColors,
+					data: yValues,
+					cutout: '80%',
+					radius: '70%',
+				}]
+			},
+			options: {
+				responsive: true,
+				title: {
+					display: true,
+					text: "World Wide Wine Production 2018"
+				}
+			}
+		});
 
 
-        function getGradient(ctx, chartArea) {
-            var gradient = ctx.createLinearGradient(0, chartArea.bottom, 0, chartArea.top);
-            gradient.addColorStop(0, 'blue');
-            gradient.addColorStop(0.5, 'yellow');
-            gradient.addColorStop(1, 'red');
-          
-          return gradient;
-        }
-        const data = {
-            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
-            datasets: [
-            {
-                axis: 'y',
-                label: 'My First Dataset',
-                data: [0, 65, 59, 80, 81, 56, 55, 40],
-                borderColor: function(context) {
-                    const chart = context.chart;
-                    const {ctx, chartArea} = chart;
-            
-                    if (!chartArea) {
-                      // This case happens on initial chart load
-                      return null;
-                    }
-                    return getGradient(ctx, chartArea);
-                  },
-                borderWidth: 2
-            },
-            {
-                axis: 'y',
-                label: 'My Second Dataset',
-                data: [0, 2, 39, 20, 71, 42, 9, 40],
-                borderColor: function(context) {
-                    const chart = context.chart;
-                    const {ctx, chartArea} = chart;
-            
-                    if (!chartArea) {
-                      // This case happens on initial chart load
-                      return null;
-                    }
-                    return getGradient(ctx, chartArea);
-                  },
-                borderWidth: 2
-            },
-            ]
-        };
+		const data = {
+			labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+			datasets: [{
+					label: 'My First Dataset',
+					data: [10, 45, 29, 60, 50, 56, 55, 40],
+					borderWidth: 3,
+					borderColor: '#d63384',
+					tension: 0.4,
+					backgroundColor: '#d63384',
+					pointRadius: 0,
+				},
+				{
+					label: 'My Second Dataset',
+					data: [20, 2, 39, 40, 71, 42, 9, 40],
+					borderWidth: 3,
+					tension: 0.4,
+					pointRadius: 0,
+				},
+			]
+		};
 
-        new Chart("myLine", {
-            type: "line",
-            data: data,
-            options: {
-                responsive: true,
-                plugins: {
-                  legend: {
-                    position: 'top',
-                  },
-                  title: {
-                    display: true,
-                    text: 'Chart.js Line Chart'
-                  }
-                }
-              },
-          });
-        </script>
+		new Chart("myLine", {
+			type: "line",
+			data: data,
+			options: {
+				responsive: true,
+				plugins: {
+					legend: {
+						display: false,
+					},
+					tooltip: {
+						mode: 'index',
+						intersect: false,
+						usePointStyle: true,
+						titleMarginBottom: 10,
+						bodySpacing: 10,
+						padding: 15,
+						boxPadding: 6,
+					  },
+					title: {
+						display: false,
+						text: 'Revenue Chart'
+					}
+				},
+				scales: {
+					x: {
+					  grid: {
+						display: false,
+					  },
+					  tick: {
+						stepSize: 50
+					}
+					},
+					y: {
+						ticks: {
+							count: 5,
+							stepSize: 20,
+						}
+					}
+				}
+			},
+		});
+
+		// Navbar 
+		$(window).bind("resize", function () {
+			const currentWidth = $(this).width();
+			if (currentWidth < 1200) {
+				$('body').addClass('navbar-hide');
+			} else if (currentWidth >= 1200) {
+				$('body').removeClass('navbar-hide');
+			}
+		});
+	</script>
 </body>
+
 </html>
