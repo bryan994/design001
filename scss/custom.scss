@@ -5,7 +5,8 @@
 $primary: #d63384;
 $secondary: #377dff;
 $success: #00cc88;
-$body-bg: #fff;
+$body-bg: transparent;
+$background-color: #edf2f9;
 $link-decoration: none;
 $enable-shadows: true;
 $prefix: "bs-";
@@ -13,22 +14,24 @@ $prefix: "bs-";
 $header-height: 3rem;
 // Navbar
 $layout-width: 15rem;
-$nav-link-color: #677788;
+$nav-link-color: #132144;
+$nav-link-padding-x: 1.5rem;
+$nav-link-hover-color: #fff;
+$nav-link-hover-bg: #eee;
+$nav-tabs-link-active-bg: #eee;
 // Card
 $card-border-width: 0;
 $card-box-shadow: 0 0.375rem 0.75rem rgb(140 152 164 / 8%);
-$card-cap-bg: 'transparent';
-// Table 
+$card-cap-bg: "transparent";
+// Table
 $table-text-color: #677788;
 // Progress
-$progress-height: .4rem;
+$progress-height: 0.4rem;
 // Button
 $btn-box-shadow: 0 1px 1px rgb(0 0 0 / 8%);
 
 // Bootstrap required
 @import "../node_modules/bootstrap/scss/variables";
-$gradient: linear-gradient(to bottom right, $blue-200, $blue-500, $blue-700);
-
 @import "../node_modules/bootstrap/scss/maps";
 @import "../node_modules/bootstrap/scss/mixins";
 @import "../node_modules/bootstrap/scss/root";
@@ -51,31 +54,35 @@ $gradient: linear-gradient(to bottom right, $blue-200, $blue-500, $blue-700);
 @import "../node_modules/bootstrap/scss/nav";
 @import "../node_modules/bootstrap/scss/transitions";
 
-$bootstrap-icons-font-dir: '../node_modules/bootstrap-icons/font/fonts';
+$bootstrap-icons-font-dir: "../node_modules/bootstrap-icons/font/fonts";
 @import "../node_modules/bootstrap-icons/font/bootstrap-icons";
 
 // Custom code
 body {
-    background-color: $gray-100;
+    background-color: $background-color;
 }
-a, a:hover {
+a,
+a:hover {
     text-decoration: $link-decoration;
     color: $gray-700;
 }
 
-
-
 .logo {
-    background-image: $gradient;
-    color: #fff;
     height: $header-height;
+    padding-left: 2.2rem;
+
+    & img {
+        width: 5rem;
+    }
 }
 .header {
     height: $header-height;
-    background-color: #fff;
-    box-shadow: 0 0 0.5rem $gray-200;
+    box-shadow: 0 0 0.8rem $gray-200;
+    border-bottom: 1px solid $gray-300;
+    z-index: 2;
+    background-color: $background-color;
 }
- //Content 
+//Content
 .navbar-hide .content {
     padding-left: 0;
 }
@@ -85,7 +92,7 @@ a, a:hover {
         font-size: 1.2rem;
     }
     &-desc {
-        font-size: .7rem;
+        font-size: 0.7rem;
         color: $gray-500;
     }
     &-num {
@@ -95,30 +102,35 @@ a, a:hover {
 }
 
 .btn {
-    font-size: .8rem;
+    font-size: 0.8rem;
 }
 
 // Navbar
 .navbar {
-    background-color: #fff;
     width: $layout-width;
     z-index: 1;
+    border-right: 1px solid $gray-300;
 }
 .navbar-hide .navbar {
     margin-left: -$layout-width;
 }
 .nav {
-    box-shadow: .5rem 0 .8rem -1rem $gray-200;
+    box-shadow: 0.5rem 0 0.8rem -1rem $gray-200;
+    padding: 0 0.5rem;
     &-item {
-        padding: .8rem .5rem;
-        font-size: .9rem;
+        padding: 0.2rem;
+        font-size: 0.9rem;
     }
     &-title {
-        padding-left: .8rem;
+        padding-left: 0.8rem;
         margin-right: auto;
     }
-    & i, &-title {
-        color: $gray-700;
+    & i {
+        opacity: 0.5;
+    }
+    & i,
+    &-title {
+        color: $nav-link-color;
     }
 
     & .nav-link {
@@ -126,36 +138,51 @@ a, a:hover {
         align-items: center;
     }
     & .nav-collapse {
-        padding-left: 2rem;
+        padding-left: 1.78rem;
     }
 }
-
+.dropdown-header {
+    padding-left: 2.3rem;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+}
+.dropdown-toggle::after {
+    width: 0.38rem;
+    height: 0.38rem;
+    border-top: 0;
+    border-left: 0;
+    border-right: 1px solid #5e6e82;
+    border-bottom: 1px solid #5e6e82;
+    transform: translateY(-50%) rotate(45deg);
+}
 // Card
 .card-subtitle {
-    font-size: .8rem;
+    font-size: 0.8rem;
     margin-top: 0 !important;
 }
-// Table 
+// Table
 .table tr > * {
-    font-size: .88rem;
+    font-size: 0.88rem;
     color: $table-text-color;
     padding: 1.2rem 1rem;
     vertical-align: middle;
 }
 thead th {
     text-transform: uppercase;
-    padding: .88rem 1.2rem !important;
+    padding: 0.88rem 1.2rem !important;
 }
-.card .col-lg-5 > *, .card .col-lg-5 input, .card .dropdown-item {
-    font-size: .9rem;
+.card .col-lg-5 > *,
+.card .col-lg-5 input,
+.card .dropdown-item {
+    font-size: 0.9rem;
 }
 .dot {
     border-radius: 50%;
     display: inline-block;
-    height: .5rem;
-    margin-right: .3rem;
+    height: 0.5rem;
+    margin-right: 0.3rem;
     vertical-align: middle;
-    width: .5rem;
+    width: 0.5rem;
     font-weight: normal;
 }
 // Avatar
@@ -167,20 +194,24 @@ thead th {
     line-height: 2.2rem;
 }
 // Progress
-.progress {width: 5rem;}
+.progress {
+    width: 5rem;
+}
 // Button
 .btn-light {
     border-color: #e7eaf0;
     color: #495057;
 }
 // Media
-@include media-breakpoint-up(sm) {  }
-@include media-breakpoint-up(md) { }
-@include media-breakpoint-up(lg) { 
+@include media-breakpoint-up(sm) {
+}
+@include media-breakpoint-up(md) {
+}
+@include media-breakpoint-up(lg) {
     .avatar {
         width: 2.6rem;
         height: 2.6rem;
         font-size: 1rem;
         line-height: 2.6rem;
     }
- }
+}
