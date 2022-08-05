@@ -14995,7 +14995,7 @@ textarea.form-control-lg {
 }
 
 body {
-  background-color: #edf2f9;
+  background-color: #f5f8fa;
 }
 
 a,
@@ -15014,10 +15014,16 @@ a:hover {
 
 .header {
   height: 3rem;
-  box-shadow: 0 0 0.8rem #e9ecef;
-  border-bottom: 1px solid #dee2e6;
+  border-bottom: 1px solid #e9ecef;
   z-index: 2;
-  background-color: #edf2f9;
+  background-color: #fff;
+  right: 0;
+  left: 0;
+  margin-left: 15rem;
+}
+
+.navbar-hide .header {
+  margin-left: 0;
 }
 
 .navbar-hide .content {
@@ -15025,6 +15031,7 @@ a:hover {
 }
 
 .content {
+  position: relative;
   padding-left: 15rem;
 }
 .content-title {
@@ -15043,10 +15050,19 @@ a:hover {
   font-size: 0.8rem;
 }
 
+.main {
+  height: 100vh;
+}
+
+#navbar {
+  height: calc(100vh - 3rem);
+}
+
 .navbar {
+  background-color: #fff;
   width: 15rem;
   z-index: 1;
-  border-right: 1px solid #dee2e6;
+  border-right: 1px solid #e9ecef;
 }
 
 .navbar-hide .navbar {

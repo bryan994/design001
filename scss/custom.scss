@@ -6,7 +6,7 @@ $primary: #d63384;
 $secondary: #377dff;
 $success: #00cc88;
 $body-bg: transparent;
-$background-color: #edf2f9;
+$background-color: #f5f8fa;
 $link-decoration: none;
 $enable-shadows: true;
 $prefix: "bs-";
@@ -77,16 +77,22 @@ a:hover {
 }
 .header {
     height: $header-height;
-    box-shadow: 0 0 0.8rem $gray-200;
-    border-bottom: 1px solid $gray-300;
+    border-bottom: 1px solid $gray-200;
     z-index: 2;
-    background-color: $background-color;
+    background-color: #fff;
+    right: 0;
+    left: 0;
+    margin-left: $layout-width;
+}
+.navbar-hide .header {
+    margin-left: 0;
 }
 //Content
 .navbar-hide .content {
     padding-left: 0;
 }
 .content {
+    position: relative;
     padding-left: $layout-width;
     &-title {
         font-size: 1.2rem;
@@ -104,12 +110,18 @@ a:hover {
 .btn {
     font-size: 0.8rem;
 }
-
+.main {
+    height: 100vh;
+}
 // Navbar
+#navbar {
+    height: calc(100vh - $header-height);
+}
 .navbar {
+    background-color: #fff;
     width: $layout-width;
     z-index: 1;
-    border-right: 1px solid $gray-300;
+    border-right: 1px solid $gray-200;
 }
 .navbar-hide .navbar {
     margin-left: -$layout-width;
@@ -202,6 +214,7 @@ thead th {
     border-color: #e7eaf0;
     color: #495057;
 }
+
 // Media
 @include media-breakpoint-up(sm) {
 }
