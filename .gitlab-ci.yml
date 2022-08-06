@@ -12,6 +12,7 @@ build website:
         - npm install
         - mkdir public
         - mv css images index.html public/
+        - ls public
     artifacts:
         paths:
             - public
@@ -23,7 +24,7 @@ build website:
     script:
         - aws --version
         - aws s3 rm s3://$AWS_S3_BUCKET --recursive
-        - aws s3 sync public s3://$AWS_S3_BUCKET
+        - aws s3 sync public/ s3://$AWS_S3_BUCKET
 
 deploy to production:
     environment: production
