@@ -12,7 +12,6 @@ build website:
     stage: build
     script:
         - yarn install
-        - yarn lint 
         - yarn test
         - yarn build
         - echo $APP_VERSION > build/version.html
