@@ -10,6 +10,7 @@ build website:
     stage: build
     script:
         - npm install
+        - mkdir public
         - mv css images index.html public/
     artifacts:
         paths:
