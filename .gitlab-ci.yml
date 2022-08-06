@@ -19,7 +19,8 @@ build website:
         name: amazon/aws-cli:2.4.11
     script:
         - aws --version
-        - aws s3 sync public s3://$AWS_S3_BUCKET --delete
+        - aws s3 rm s3://$AWS_S3_BUCKET --recursive
+        - aws s3 cp public s3://$AWS_S3_BUCKET --recursive
 
 deploy to production:
     environment: production
