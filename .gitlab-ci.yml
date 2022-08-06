@@ -16,17 +16,6 @@ build website:
         paths:
             - build
 
-.test website:
-    image: node:16-alpine
-    stage: test
-    script:
-        - yarn global add serve
-        - apk add curl
-        - serve -s build &
-        - sleep 10
-        - curl "http://localhost:3000" | grep "React App"
-
-
 .deploy:
     image:
         name: amazon/aws-cli:2.4.11
@@ -36,13 +25,6 @@ build website:
     script:
         - aws --version
         - aws s3 sync build s3://$AWS_S3_BUCKET --delete
-        - curl $CI_ENVIRONMENT_URL | grep "React App"
-        - curl $CI_ENVIRONMENT_URL/version.html | grep $APP_VERSION
-
-.deploy to staging:
-    environment: staging
-    stage: deploy to staging
-    extends: .deploy
 
 deploy to production:
     environment: production
@@ -50,25 +32,3 @@ deploy to production:
     stage: deploy to production
     extends: .deploy
 
-
-.production tests:
-    image: curlimages/curl
-    stage: post deploy
-    rules: 
-        - if: $CI_DEFAULT_BRANCH == $CI_COMMIT_REF_NAME
-    script:
-        
-        
-.unit test:
-    image: node:16-alpine
-    stage: .pre
-    script:
-        - yarn install
-        - yarn test
-
-.linter:
-    image: node:16-alpine
-    stage: .pre
-    script:
-        - yarn install
-        - yarn lint 
