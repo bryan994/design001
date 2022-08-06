@@ -1662,13 +1662,19 @@
 		});
 
 		// Navbar
-		$(window).bind("resize", function () {
-			const currentWidth = $(this).width();
-			if (currentWidth < 1200) {
-				$("body").addClass("navbar-hide");
-			} else if (currentWidth >= 1200) {
-				$("body").removeClass("navbar-hide");
+		function hideNav(width) {
+			if ($(width < 1200) {
+					$("body").addClass("navbar-hide");
+				} else if (width >= 1200) {
+					$("body").removeClass("navbar-hide");
+				}
 			}
+		}
+		$(window).bind("resize", function () {
+			hideNav($(this).width());
+		});
+		$(document).ready(function () {
+			hideNav($(window).width());
 		});
 	</script>
 </body>
