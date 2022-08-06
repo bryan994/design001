@@ -12,17 +12,14 @@ build website:
         - npm install
     artifacts:
         paths:
-            - build
+            - public
 
 .deploy:
     image:
         name: amazon/aws-cli:2.4.11
-        entrypoint: [""]
-    rules: 
-        - if: $CI_DEFAULT_BRANCH == $CI_COMMIT_REF_NAME
     script:
         - aws --version
-        - aws s3 sync build s3://$AWS_S3_BUCKET --delete
+        - aws s3 sync public s3://$AWS_S3_BUCKET --delete
 
 deploy to production:
     environment: production
