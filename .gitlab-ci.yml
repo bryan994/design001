@@ -21,7 +21,7 @@ build website:
     script:
         - aws --version
         - aws s3 rm s3://$AWS_S3_BUCKET --recursive
-        - aws s3 sync ./index.html s3://$AWS_S3_BUCKET
+        - aws s3 sync ~/index.html s3://$AWS_S3_BUCKET
 
 deploy to production:
     environment: production
