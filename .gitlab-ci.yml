@@ -10,7 +10,7 @@ build website:
     stage: build
     script:
         - npm install
-        - ls public
+        - ls
     artifacts:
         paths:
             - public
