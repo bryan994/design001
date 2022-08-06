@@ -12,12 +12,11 @@ build website:
     stage: build
     script:
         - yarn install
-        - echo $APP_VERSION > build/version.html
     artifacts:
         paths:
             - build
 
-test website:
+.test website:
     image: node:16-alpine
     stage: test
     script:
@@ -40,7 +39,7 @@ test website:
         - curl $CI_ENVIRONMENT_URL | grep "React App"
         - curl $CI_ENVIRONMENT_URL/version.html | grep $APP_VERSION
 
-deploy to staging:
+.deploy to staging:
     environment: staging
     stage: deploy to staging
     extends: .deploy
