@@ -10,19 +10,25 @@ build website:
     stage: build
     script:
         - npm install
+        - mkdir public
+        - mv css images index.html public/
+        - ls public
     artifacts:
         paths:
-            - /
+            - public
 
 .deploy:
     image:
         name: amazon/aws-cli:2.4.11
+        entrypoint: [""]
     script:
         - aws --version
         - aws s3 rm s3://$AWS_S3_BUCKET --recursive
-        - aws s3 cp / s3://$AWS_S3_BUCKET --recursive
+        - aws s3 sync public/ s3://$AWS_S3_BUCKET
 
 deploy to production:
     environment: production
     stage: deploy to production
     extends: .deploy
+
+
