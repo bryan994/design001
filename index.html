@@ -1663,12 +1663,11 @@
 
 		// Navbar
 		function hideNav(width) {
-			if ($(width < 1200)) {
-				$("body").addClass("navbar-hide");
-			} else if (width >= 1200) {
+			if (width >= 1200) {
 				$("body").removeClass("navbar-hide");
+			} else if ($(width < 1200)) {
+				$("body").addClass("navbar-hide");
 			}
-		}
 		}
 		$(window).bind("resize", function () {
 			hideNav($(this).width());
