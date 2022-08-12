@@ -10,15 +10,16 @@
 </head>
 
 <body>
-	<div class="navbar position-fixed top-0 left-0 bottom-0">
+	<div class="navbar position-fixed top-0 left-0 bottom-0 offcanvas-start d-block" tabindex="-1" id="offcanvasNavbar"
+		aria-labelledby="offcanvasNavbarLabel">
 		<a href="#" class="logo d-flex align-items-center">
 			<img src="images/logo.webp" alt="Logo" />
 		</a>
 		<div id="navbar" class="overflow-auto">
-			<ul class="nav flex-column mt-4">
+			<ul class="nav flex-column mt-2">
 				<li class="nav-item">
 					<a href="#userNav" class="nav-link dropdown-toggle" data-bs-toggle="collapse"
-						data-bs-target="#userNav1"="button" aria-expanded="false" aria-controls="userNav1">
+						data-bs-target="#userNav1" role="button" aria-expanded="false" aria-controls="userNav1">
 						<i class="bi bi-house-door"></i>
 						<span class="nav-title">Dashboard</span>
 					</a>
@@ -429,11 +430,15 @@
 	</div>
 	<div class="content">
 		<div class="header d-flex align-items-center px-2 position-fixed">
-			<a href="" class="me-auto"><i class="bi bi-list"></i></a>
-			<a href=""><i class="bi bi-bell-fill"></i></a>
-			<a href=""><i class="bi bi-envelope-fill"></i></a>
-			<a href=""><i class="bi bi-people-fill"></i></a>
-			<a href=""><i class="bi bi-gear-fill"></i></a>
+			<a href="#" id="navbar-toggler" class="me-xl-auto navbar-item" aria-controls="offcanvasNavbar"><i
+					class="bi bi-list"></i></a>
+			<a href="#" class="logo d-flex align-items-center me-auto d-xl-none">
+				<img src="images/logo.webp" alt="Logo" />
+			</a>
+			<a href="#" class="navbar-item"><i class="bi bi-bell"></i></a>
+			<a href="#" class="navbar-item"><i class="bi bi-envelope"></i></a>
+			<a href="#" class="navbar-item"><i class="bi bi-people"></i></a>
+			<a href="#" class="navbar-item"><i class="bi bi-gear"></i></a>
 		</div>
 		<main class="main pt-5 overflow-auto">
 			<div class="container-fluid p-4">
@@ -585,7 +590,7 @@
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-12">
+					<div class="col-12 mb-4">
 						<div class="card">
 							<div class="card-header py-3">
 								<div class="row align-items-center">
@@ -911,658 +916,79 @@
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-12">
-						<div class="card">
-							<div class="card-header py-3">
-								<div class="row align-items-center">
-									<div class="col-md fw-bold">
-										Products
-									</div>
-									<div class="col-auto mt-2 mt-md-0">
-										<div class="row">
-											<div class="col-sm-auto mb-2 mt-md-0">
-												<div class="row align-items-center">
-													<span class="col">Status:
-													</span>
-													<div class="dropdown col-auto">
-														<a class="btn dropdown-toggle bg-transparent border-0 shadow-none"
-															href="#" role="button" data-bs-toggle="dropdown"
-															aria-expanded="false">
-															All
-														</a>
-														<ul class="dropdown-menu">
-															<li>
-																<a class="dropdown-item" href="#">Available</a>
-															</li>
-															<li>
-																<a class="dropdown-item" href="#">Coming
-																	Soon</a>
-															</li>
-															<li>
-																<a class="dropdown-item" href="#">Out Of
-																	Stocks</a>
-															</li>
-														</ul>
-													</div>
-												</div>
-											</div>
-											<div class="col-sm-auto mb-2 mt-md-0">
-												<div class="row align-items-center">
-													<span class="col">Signed Up:
-													</span>
-													<div class="dropdown col-auto">
-														<a class="btn dropdown-toggle bg-transparent border-0 shadow-none"
-															href="#" role="button" data-bs-toggle="dropdown"
-															aria-expanded="false">
-															All
-														</a>
-														<ul class="dropdown-menu">
-															<li>
-																<a class="dropdown-item" href="#">1 years
-																	old</a>
-															</li>
-															<li>
-																<a class="dropdown-item" href="#">6
-																	months
-																	ago</a>
-															</li>
-															<li>
-																<a class="dropdown-item" href="#">3
-																	months
-																	ago</a>
-															</li>
-														</ul>
-													</div>
-												</div>
-											</div>
-											<div class="col-sm-auto">
-												<div class="input-group flex-nowrap border-0 border-bottom">
-													<span class="input-group-text bg-transparent border-0"
-														id="addon-wrapping"><i class="bi bi-search"></i></span>
-													<input type="text" class="form-control border-0 shadow-none"
-														placeholder="Search" aria-label="Search"
-														aria-describedby="addon-wrapping" />
-												</div>
-											</div>
+					<div class="col-lg-4 col-md-12 mb-4">
+						<div class="card h-100">
+							<div class="card-body">
+								<div class="card-title fw-bold text-uppercase">
+									Top Seller
+								</div>
+								<div class="card-subtitle fs-7 text-gray-500 fw-semibold mb-4">
+									More than 100 users
+								</div>
+								<div class="card-text">
+									<div class="d-flex align-items-center mb-3">
+										<i
+											class="bi bi-people-fill d-flex align-items-center bg-primary text-white p-2 rounded-1 fs-5 me-3"></i>
+										<div class="d-flex flex-column me-auto">
+											<span class="fs-6 fw-bold">Leslie</span>
+											<span class="fs-7 text-gray-500 fw-semibold">Technology, Health Care</span>
 										</div>
+										<button class="btn btn-light">Details</button>
+									</div>
+									<div class="d-flex align-items-center mb-3">
+										<i
+											class="bi bi-people-fill d-flex align-items-center bg-secondary text-white p-2 rounded-1 fs-5 me-3"></i>
+										<div class="d-flex flex-column me-auto">
+											<span class="fs-6 fw-bold">Leslie</span>
+											<span class="fs-7 text-gray-500 fw-semibold">Technology, Health Care</span>
+										</div>
+										<button class="btn btn-light">Details</button>
+									</div>
+									<div class="d-flex align-items-center mb-3">
+										<i
+											class="bi bi-people-fill d-flex align-items-center bg-danger text-white p-2 rounded-1 fs-5 me-3"></i>
+										<div class="d-flex flex-column me-auto">
+											<span class="fs-6 fw-bold">Leslie</span>
+											<span class="fs-7 text-gray-500 fw-semibold">Technology, Health Care</span>
+										</div>
+										<button class="btn btn-light">Details</button>
+									</div>
+									<div class="d-flex align-items-center mb-3">
+										<i
+											class="bi bi-people-fill d-flex align-items-center bg-success text-white p-2 rounded-1 fs-5 me-3"></i>
+										<div class="d-flex flex-column me-auto">
+											<span class="fs-6 fw-bold">Leslie</span>
+											<span class="fs-7 text-gray-500 fw-semibold">Technology, Health Care</span>
+										</div>
+										<button class="btn btn-light">Details</button>
+									</div>
+									<div class="d-flex align-items-center">
+										<i
+											class="bi bi-people-fill d-flex align-items-center bg-warning text-white p-2 rounded-1 fs-5 me-3"></i>
+										<div class="d-flex flex-column me-auto">
+											<span class="fs-6 fw-bold">Leslie</span>
+											<span class="fs-7 text-gray-500 fw-semibold">Technology, Health Care</span>
+										</div>
+										<button class="btn btn-light">Details</button>
 									</div>
 								</div>
 							</div>
-							<div class="table-responsive">
-								<table class="table table-hover px-4">
-									<thead class="table-light">
-										<tr class="">
-											<th scope="col">Name</th>
-											<th scope="col">Status</th>
-											<th scope="col">Category</th>
-											<th scope="col">Distributor</th>
-											<th scope="col" class="text-nowrap">
-												Registered Date
-											</th>
-											<th scope="col">Revenue</th>
-											<th scope="col">Action</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<th>
-												<a href="#" class="d-flex align-items-center">
-													<div class="flex-shrink-0">
-														<div
-															class="avatar me-2 rounded-5 bg-warning text-center bg-opacity-25">
-															<span class="text-warning">D</span>
-														</div>
-													</div>
-													<span>DJI</span>
-												</a>
-											</th>
-											<td>
-												<div class="d-flex align-items-center">
-													<span class="dot bg-success"></span>
-													<span>Available</span>
-												</div>
-											</td>
-											<td>Electronics</td>
-											<td>Mark Zuckerberg</td>
-											<td class="text-nowrap">
-												2020-06-11 15:34:32
-											</td>
-											<td>
-												<div class="d-flex align-items-center">
-													<span class="me-2">38%</span>
-													<div class="progress">
-														<div class="progress-bar bg-warning" role="progressbar" style="
-                                                                    width: 38%;
-                                                                " aria-valuenow="10" aria-valuemin="0"
-															aria-valuemax="100"></div>
-													</div>
-												</div>
-											</td>
-											<td>
-												<div class="d-flex align-items-center">
-													<button class="btn btn-primary me-2">
-														View
-													</button>
-													<button class="btn btn-light">
-														<i class="bi bi-trash-fill"></i>
-													</button>
-												</div>
-											</td>
-										</tr>
-										<tr>
-											<th>
-												<a href="#" class="d-flex align-items-center">
-													<div class="flex-shrink-0">
-														<div
-															class="avatar me-2 rounded-5 bg-info text-center bg-opacity-25">
-															<span class="text-info">A</span>
-														</div>
-													</div>
-													<span>Apple Iphone</span>
-												</a>
-											</th>
-											<td>
-												<div class="d-flex align-items-center">
-													<span class="dot bg-danger"></span>
-													<span>Out Of Stocks</span>
-												</div>
-											</td>
-											<td>Home & Living</td>
-											<td>Mark Zuckerberg</td>
-											<td class="text-nowrap">
-												2020-06-11 15:34:32
-											</td>
-											<td>
-												<div class="d-flex align-items-center">
-													<span class="me-2">60%</span>
-													<div class="progress">
-														<div class="progress-bar bg-success" role="progressbar" style="
-                                                                    width: 60%;
-                                                                " aria-valuenow="10" aria-valuemin="0"
-															aria-valuemax="100"></div>
-													</div>
-												</div>
-											</td>
-											<td>
-												<div class="d-flex align-items-center">
-													<button class="btn btn-primary me-2">
-														View
-													</button>
-													<button class="btn btn-light">
-														<i class="bi bi-trash-fill"></i>
-													</button>
-												</div>
-											</td>
-										</tr>
-										<tr>
-											<th>
-												<a href="#" class="d-flex align-items-center">
-													<div class="flex-shrink-0">
-														<div
-															class="avatar me-2 rounded-5 bg-success text-center bg-opacity-25">
-															<span class="text-success">G</span>
-														</div>
-													</div>
-													<span>Gaming Chair</span>
-												</a>
-											</th>
-											<td>
-												<div class="d-flex align-items-center">
-													<span class="dot bg-warning"></span>
-													<span>Coming Soon</span>
-												</div>
-											</td>
-											<td>Furniture</td>
-											<td>Mark Zuckerberg</td>
-											<td class="text-nowrap">
-												2020-06-11 15:34:32
-											</td>
-											<td>
-												<div class="d-flex align-items-center">
-													<span class="me-2">0%</span>
-													<div class="progress">
-														<div class="progress-bar bg-danger" role="progressbar" style="
-                                                                    width: 0%;
-                                                                " aria-valuenow="10" aria-valuemin="0"
-															aria-valuemax="100"></div>
-													</div>
-												</div>
-											</td>
-											<td>
-												<div class="d-flex align-items-center">
-													<button class="btn btn-primary me-2">
-														View
-													</button>
-													<button class="btn btn-light">
-														<i class="bi bi-trash-fill"></i>
-													</button>
-												</div>
-											</td>
-										</tr>
-										<tr>
-											<th>
-												<a href="#" class="d-flex align-items-center">
-													<div class="flex-shrink-0">
-														<div
-															class="avatar me-2 rounded-5 bg-primary text-center bg-opacity-25">
-															<span class="text-primary">R</span>
-														</div>
-													</div>
-													<span>Rich Dad, Poor
-														Dad</span>
-												</a>
-											</th>
-											<td>
-												<div class="d-flex align-items-center">
-													<span class="dot bg-success"></span>
-													<span>Available</span>
-												</div>
-											</td>
-											<td>Books</td>
-											<td>Mark Zuckerberg</td>
-											<td class="text-nowrap">
-												2020-06-11 15:34:32
-											</td>
-											<td>
-												<div class="d-flex align-items-center">
-													<span class="me-2">88%</span>
-													<div class="progress">
-														<div class="progress-bar bg-success" role="progressbar" style="
-                                                                    width: 88%;
-                                                                " aria-valuenow="10" aria-valuemin="0"
-															aria-valuemax="100"></div>
-													</div>
-												</div>
-											</td>
-											<td>
-												<div class="d-flex align-items-center">
-													<button class="btn btn-primary me-2">
-														View
-													</button>
-													<button class="btn btn-light">
-														<i class="bi bi-trash-fill"></i>
-													</button>
-												</div>
-											</td>
-										</tr>
-										<tr>
-											<th>
-												<a href="#" class="d-flex align-items-center">
-													<div class="flex-shrink-0">
-														<div
-															class="avatar me-2 rounded-5 bg-dark text-center bg-opacity-25">
-															<span class="text-light">F</span>
-														</div>
-													</div>
-													<span>Face Masks</span>
-												</a>
-											</th>
-											<td>
-												<div class="d-flex align-items-center">
-													<span class="dot bg-success"></span>
-													<span>Available</span>
-												</div>
-											</td>
-											<td>Health & Beauty</td>
-											<td>Mark Zuckerberg</td>
-											<td class="text-nowrap">
-												2020-06-11 15:34:32
-											</td>
-											<td>
-												<div class="d-flex align-items-center">
-													<span class="me-2">33%</span>
-													<div class="progress">
-														<div class="progress-bar bg-warning" role="progressbar" style="
-                                                                    width: 33%;
-                                                                " aria-valuenow="10" aria-valuemin="0"
-															aria-valuemax="100"></div>
-													</div>
-												</div>
-											</td>
-											<td>
-												<div class="d-flex align-items-center">
-													<button class="btn btn-primary me-2">
-														View
-													</button>
-													<button class="btn btn-light">
-														<i class="bi bi-trash-fill"></i>
-													</button>
-												</div>
-											</td>
-										</tr>
-									</tbody>
-								</table>
+						</div>
+					</div>
+					<div class="col-lg-8 col-md-12 mb-4">
+						<div class="card">
+							<div class="card-body">
+								<div class="card-title fw-bold text-uppercase">Top Selling Categories</div>
+								<div class="card-subtitle fs-7 text-gray-500 fw-semibold">More than 1000 items</div>
+								<canvas id="myBar" style="
+								width: 100%;
+								
+							"></canvas>
 							</div>
 						</div>
 					</div>
 				</div>
-				<div class="row">
-					<div class="col-12">
-						<div class="card">
-							<div class="card-header py-3">
-								<div class="row align-items-center">
-									<div class="col-md fw-bold">
-										Products
-									</div>
-									<div class="col-auto mt-2 mt-md-0">
-										<div class="row">
-											<div class="col-sm-auto mb-2 mt-md-0">
-												<div class="row align-items-center">
-													<span class="col">Status:
-													</span>
-													<div class="dropdown col-auto">
-														<a class="btn dropdown-toggle bg-transparent border-0 shadow-none"
-															href="#" role="button" data-bs-toggle="dropdown"
-															aria-expanded="false">
-															All
-														</a>
-														<ul class="dropdown-menu">
-															<li>
-																<a class="dropdown-item" href="#">Available</a>
-															</li>
-															<li>
-																<a class="dropdown-item" href="#">Coming
-																	Soon</a>
-															</li>
-															<li>
-																<a class="dropdown-item" href="#">Out Of
-																	Stocks</a>
-															</li>
-														</ul>
-													</div>
-												</div>
-											</div>
-											<div class="col-sm-auto mb-2 mt-md-0">
-												<div class="row align-items-center">
-													<span class="col">Signed Up:
-													</span>
-													<div class="dropdown col-auto">
-														<a class="btn dropdown-toggle bg-transparent border-0 shadow-none"
-															href="#" role="button" data-bs-toggle="dropdown"
-															aria-expanded="false">
-															All
-														</a>
-														<ul class="dropdown-menu">
-															<li>
-																<a class="dropdown-item" href="#">1 years
-																	old</a>
-															</li>
-															<li>
-																<a class="dropdown-item" href="#">6
-																	months
-																	ago</a>
-															</li>
-															<li>
-																<a class="dropdown-item" href="#">3
-																	months
-																	ago</a>
-															</li>
-														</ul>
-													</div>
-												</div>
-											</div>
-											<div class="col-sm-auto">
-												<div class="input-group flex-nowrap border-0 border-bottom">
-													<span class="input-group-text bg-transparent border-0"
-														id="addon-wrapping"><i class="bi bi-search"></i></span>
-													<input type="text" class="form-control border-0 shadow-none"
-														placeholder="Search" aria-label="Search"
-														aria-describedby="addon-wrapping" />
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="table-responsive">
-								<table class="table table-hover px-4">
-									<thead class="table-light">
-										<tr class="">
-											<th scope="col">Name</th>
-											<th scope="col">Status</th>
-											<th scope="col">Category</th>
-											<th scope="col">Distributor</th>
-											<th scope="col" class="text-nowrap">
-												Registered Date
-											</th>
-											<th scope="col">Revenue</th>
-											<th scope="col">Action</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<th>
-												<a href="#" class="d-flex align-items-center">
-													<div class="flex-shrink-0">
-														<div
-															class="avatar me-2 rounded-5 bg-warning text-center bg-opacity-25">
-															<span class="text-warning">D</span>
-														</div>
-													</div>
-													<span>DJI</span>
-												</a>
-											</th>
-											<td>
-												<div class="d-flex align-items-center">
-													<span class="dot bg-success"></span>
-													<span>Available</span>
-												</div>
-											</td>
-											<td>Electronics</td>
-											<td>Mark Zuckerberg</td>
-											<td class="text-nowrap">
-												2020-06-11 15:34:32
-											</td>
-											<td>
-												<div class="d-flex align-items-center">
-													<span class="me-2">38%</span>
-													<div class="progress">
-														<div class="progress-bar bg-warning" role="progressbar" style="
-                                                                    width: 38%;
-                                                                " aria-valuenow="10" aria-valuemin="0"
-															aria-valuemax="100"></div>
-													</div>
-												</div>
-											</td>
-											<td>
-												<div class="d-flex align-items-center">
-													<button class="btn btn-primary me-2">
-														View
-													</button>
-													<button class="btn btn-light">
-														<i class="bi bi-trash-fill"></i>
-													</button>
-												</div>
-											</td>
-										</tr>
-										<tr>
-											<th>
-												<a href="#" class="d-flex align-items-center">
-													<div class="flex-shrink-0">
-														<div
-															class="avatar me-2 rounded-5 bg-info text-center bg-opacity-25">
-															<span class="text-info">A</span>
-														</div>
-													</div>
-													<span>Apple Iphone</span>
-												</a>
-											</th>
-											<td>
-												<div class="d-flex align-items-center">
-													<span class="dot bg-danger"></span>
-													<span>Out Of Stocks</span>
-												</div>
-											</td>
-											<td>Home & Living</td>
-											<td>Mark Zuckerberg</td>
-											<td class="text-nowrap">
-												2020-06-11 15:34:32
-											</td>
-											<td>
-												<div class="d-flex align-items-center">
-													<span class="me-2">60%</span>
-													<div class="progress">
-														<div class="progress-bar bg-success" role="progressbar" style="
-                                                                    width: 60%;
-                                                                " aria-valuenow="10" aria-valuemin="0"
-															aria-valuemax="100"></div>
-													</div>
-												</div>
-											</td>
-											<td>
-												<div class="d-flex align-items-center">
-													<button class="btn btn-primary me-2">
-														View
-													</button>
-													<button class="btn btn-light">
-														<i class="bi bi-trash-fill"></i>
-													</button>
-												</div>
-											</td>
-										</tr>
-										<tr>
-											<th>
-												<a href="#" class="d-flex align-items-center">
-													<div class="flex-shrink-0">
-														<div
-															class="avatar me-2 rounded-5 bg-success text-center bg-opacity-25">
-															<span class="text-success">G</span>
-														</div>
-													</div>
-													<span>Gaming Chair</span>
-												</a>
-											</th>
-											<td>
-												<div class="d-flex align-items-center">
-													<span class="dot bg-warning"></span>
-													<span>Coming Soon</span>
-												</div>
-											</td>
-											<td>Furniture</td>
-											<td>Mark Zuckerberg</td>
-											<td class="text-nowrap">
-												2020-06-11 15:34:32
-											</td>
-											<td>
-												<div class="d-flex align-items-center">
-													<span class="me-2">0%</span>
-													<div class="progress">
-														<div class="progress-bar bg-danger" role="progressbar" style="
-                                                                    width: 0%;
-                                                                " aria-valuenow="10" aria-valuemin="0"
-															aria-valuemax="100"></div>
-													</div>
-												</div>
-											</td>
-											<td>
-												<div class="d-flex align-items-center">
-													<button class="btn btn-primary me-2">
-														View
-													</button>
-													<button class="btn btn-light">
-														<i class="bi bi-trash-fill"></i>
-													</button>
-												</div>
-											</td>
-										</tr>
-										<tr>
-											<th>
-												<a href="#" class="d-flex align-items-center">
-													<div class="flex-shrink-0">
-														<div
-															class="avatar me-2 rounded-5 bg-primary text-center bg-opacity-25">
-															<span class="text-primary">R</span>
-														</div>
-													</div>
-													<span>Rich Dad, Poor
-														Dad</span>
-												</a>
-											</th>
-											<td>
-												<div class="d-flex align-items-center">
-													<span class="dot bg-success"></span>
-													<span>Available</span>
-												</div>
-											</td>
-											<td>Books</td>
-											<td>Mark Zuckerberg</td>
-											<td class="text-nowrap">
-												2020-06-11 15:34:32
-											</td>
-											<td>
-												<div class="d-flex align-items-center">
-													<span class="me-2">88%</span>
-													<div class="progress">
-														<div class="progress-bar bg-success" role="progressbar" style="
-                                                                    width: 88%;
-                                                                " aria-valuenow="10" aria-valuemin="0"
-															aria-valuemax="100"></div>
-													</div>
-												</div>
-											</td>
-											<td>
-												<div class="d-flex align-items-center">
-													<button class="btn btn-primary me-2">
-														View
-													</button>
-													<button class="btn btn-light">
-														<i class="bi bi-trash-fill"></i>
-													</button>
-												</div>
-											</td>
-										</tr>
-										<tr>
-											<th>
-												<a href="#" class="d-flex align-items-center">
-													<div class="flex-shrink-0">
-														<div
-															class="avatar me-2 rounded-5 bg-dark text-center bg-opacity-25">
-															<span class="text-light">F</span>
-														</div>
-													</div>
-													<span>Face Masks</span>
-												</a>
-											</th>
-											<td>
-												<div class="d-flex align-items-center">
-													<span class="dot bg-success"></span>
-													<span>Available</span>
-												</div>
-											</td>
-											<td>Health & Beauty</td>
-											<td>Mark Zuckerberg</td>
-											<td class="text-nowrap">
-												2020-06-11 15:34:32
-											</td>
-											<td>
-												<div class="d-flex align-items-center">
-													<span class="me-2">33%</span>
-													<div class="progress">
-														<div class="progress-bar bg-warning" role="progressbar" style="
-                                                                    width: 33%;
-                                                                " aria-valuenow="10" aria-valuemin="0"
-															aria-valuemax="100"></div>
-													</div>
-												</div>
-											</td>
-											<td>
-												<div class="d-flex align-items-center">
-													<button class="btn btn-primary me-2">
-														View
-													</button>
-													<button class="btn btn-light">
-														<i class="bi bi-trash-fill"></i>
-													</button>
-												</div>
-											</td>
-										</tr>
-									</tbody>
-								</table>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="row"></div>
+				<div class="row" style="height: 100rem;"></div>
 			</div>
 		</main>
 	</div>
@@ -1661,18 +1087,96 @@
 			},
 		});
 
+		const barData = {
+			labels: ["Mobile & Accessories", "Watches", "Health & Beauty", "Groceries & Pets", "Fashion",
+				"Sports & Outdoor", "Home & Living"
+			],
+			datasets: [{
+				data: [11400, 30200, 14203, 20015, 5009, 20421, 42985],
+				backgroundColor: [
+					'rgba(255, 99, 132, 0.2)',
+					'rgba(255, 159, 64, 0.2)',
+					'rgba(255, 205, 86, 0.2)',
+					'rgba(75, 192, 192, 0.2)',
+					'rgba(54, 162, 235, 0.2)',
+					'rgba(153, 102, 255, 0.2)',
+					'rgba(201, 203, 207, 0.2)'
+				],
+				borderColor: [
+					'rgb(255, 99, 132)',
+					'rgb(255, 159, 64)',
+					'rgb(255, 205, 86)',
+					'rgb(75, 192, 192)',
+					'rgb(54, 162, 235)',
+					'rgb(153, 102, 255)',
+					'rgb(201, 203, 207)'
+				],
+				borderWidth: 1
+			}]
+		};
+		new Chart("myBar", {
+			type: "bar",
+			data: barData,
+			options: {
+				responsive: true,
+				indexAxis: 'y',
+				scales: {
+					x: {
+						grid: {
+							borderDash: [5, 5]
+						},
+						ticks: {
+							count: 6,
+						},
+					},
+					y: {
+						grid: {
+							display: false,
+						},
+						beginAtZero: true
+					}
+				},
+				plugins: {
+					legend: {
+						display: false,
+					},
+					tooltip: {
+						mode: "index",
+						intersect: false,
+						usePointStyle: true,
+						titleMarginBottom: 10,
+						bodySpacing: 10,
+						padding: 15,
+						boxPadding: 6,
+					},
+					title: {
+						display: false,
+						text: "Bar Chart",
+					},
+				},
+			},
+		});
 		// Navbar
 		function hideNav(width) {
 			if (width >= 1200) {
 				$("body").removeClass("navbar-hide");
+				$(".navbar").removeClass("offcanvas");
+				$("#navbar-toggler").attr("data-bs-target", "").attr("data-bs-toggle", "");
 			} else if ($(width < 1200)) {
 				$("body").addClass("navbar-hide");
+				$(".navbar").addClass("offcanvas");
+				$("#navbar-toggler").attr("data-bs-target", "#offcanvasNavbar").attr("data-bs-toggle", "offcanvas");
 			}
+
+			// When resize hide navbar
+			$('#offcanvasNavbar').offcanvas('hide');
 		}
+
 		$(window).bind("resize", function () {
 			hideNav($(this).width());
 		});
 		$(document).ready(function () {
+
 			hideNav($(window).width());
 		});
 	</script>

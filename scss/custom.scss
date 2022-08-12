@@ -11,12 +11,12 @@ $link-decoration: none;
 $enable-shadows: true;
 $prefix: "bs-";
 // Header
-$header-height: 3rem;
+$header-height: 3.6rem;
 // Navbar
 $layout-width: 15rem;
 $nav-link-color: #132144;
 $nav-link-padding-x: 1.5rem;
-$nav-link-hover-color: #fff;
+$nav-link-hover-color: $primary;
 $nav-link-hover-bg: #eee;
 $nav-tabs-link-active-bg: #eee;
 // Card
@@ -29,6 +29,14 @@ $table-text-color: #677788;
 $progress-height: 0.4rem;
 // Button
 $btn-box-shadow: 0 1px 1px rgb(0 0 0 / 8%);
+// Off Canvas
+$offcanvas-horizontal-width: 15rem;
+$offcanvas-vertical-height: 100vh;
+$offcanvas-transition-duration: .2s;
+$offcanvas-padding-x: 0;
+$offcanvas-padding-y: 0;
+$offcanvas-border-color: $background-color;
+$offcanvas-backdrop-opacity: .3;
 
 // Bootstrap required
 @import "../node_modules/bootstrap/scss/variables";
@@ -52,6 +60,8 @@ $btn-box-shadow: 0 1px 1px rgb(0 0 0 / 8%);
 @import "../node_modules/bootstrap/scss/dropdown";
 @import "../node_modules/bootstrap/scss/forms";
 @import "../node_modules/bootstrap/scss/nav";
+@import "../node_modules/bootstrap/scss/navbar";
+@import "../node_modules/bootstrap/scss/offcanvas";
 @import "../node_modules/bootstrap/scss/transitions";
 
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css");
@@ -65,14 +75,27 @@ a:hover {
     text-decoration: $link-decoration;
     color: $gray-700;
 }
-
+.fs-6 {
+    font-size: 1rem;
+}
+.fs-7 {
+    font-size: .75rem;
+}
 .logo {
     height: $header-height;
-    padding-left: 2.2rem;
 
     & img {
         width: 5rem;
     }
+}
+.text-gray-400 {
+    color: $gray-400;
+}
+.text-gray-500 {
+    color: $gray-500;
+}
+.text-gray-600 {
+    color: $gray-600;
 }
 .header {
     height: $header-height;
@@ -114,15 +137,39 @@ a:hover {
 }
 // Navbar
 #navbar {
+    width: 100%;
     height: calc(100vh - $header-height);
+}
+#navbar-toggler {
+    font-size: 1.4rem;
+    padding: 0;
 }
 .navbar {
     background-color: #fff;
     width: $layout-width;
-    z-index: 1;
+    z-index: 1041;
     border-right: 1px solid $gray-200;
+    padding: 0;
+
+    & .logo {
+        padding-left: 2.1rem;
+    }
+    &-item {
+        opacity: .7;
+        color: $nav-link-color;
+        border-radius: 50%;
+        width: 2.6rem;
+        height: 2.6rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    &-item:hover:not(#navbar-toggler) {
+        color: $primary;
+        background-color: rgba($primary, .4);
+    }
 }
-.navbar-hide .navbar {
+.navbar-hide .navbar:not(.offcanvas) {
     margin-left: -$layout-width;
 }
 .nav {
@@ -144,12 +191,19 @@ a:hover {
         color: $nav-link-color;
     }
 
-    & .nav-link {
+    &-link {
         display: flex;
         align-items: center;
     }
-    & .nav-collapse {
+    &-collapse {
         padding-left: 1.78rem;
+    }
+    &-link:hover > * {
+        color: $primary;
+        border-color: $primary;
+    }
+    &-link:hover.dropdown-toggle::after {
+        border-color: $primary;
     }
 }
 .dropdown-header {
@@ -165,6 +219,7 @@ a:hover {
     border-right: 1px solid #5e6e82;
     border-bottom: 1px solid #5e6e82;
     transform: translateY(-50%) rotate(45deg);
+
 }
 // Card
 .card-subtitle {
