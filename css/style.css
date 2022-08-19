@@ -8684,12 +8684,10 @@ a:hover {
 .nav-collapse {
   padding-left: 1.78rem;
 }
-.nav-link:hover > * {
-  color: #d63384;
-  border-color: #d63384;
-}
-.nav-link:hover.dropdown-toggle::after {
-  border-color: #d63384;
+.nav-link:hover {
+  background: rgba(0, 0, 0, 0.08);
+  border-radius: 0.5rem;
+  color: #132144;
 }
 
 .dropdown-header {
@@ -8706,6 +8704,11 @@ a:hover {
   border-right: 1px solid #5e6e82;
   border-bottom: 1px solid #5e6e82;
   transform: translateY(-50%) rotate(45deg);
+  transition: all 0.3s;
+}
+
+.dropdown-toggle[aria-expanded=true]::after {
+  transform: rotate(225deg);
 }
 
 .card-subtitle {

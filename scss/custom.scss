@@ -198,12 +198,12 @@ a:hover {
     &-collapse {
         padding-left: 1.78rem;
     }
-    &-link:hover > * {
-        color: $primary;
-        border-color: $primary;
-    }
-    &-link:hover.dropdown-toggle::after {
-        border-color: $primary;
+    &-link:hover {
+        // color: $primary;
+        // border-color: $primary;
+        background:rgb(0 0 0 / 8%);
+        border-radius: .5rem;
+        color: #132144;
     }
 }
 .dropdown-header {
@@ -219,7 +219,10 @@ a:hover {
     border-right: 1px solid #5e6e82;
     border-bottom: 1px solid #5e6e82;
     transform: translateY(-50%) rotate(45deg);
-
+    transition: all .3s;
+}
+.dropdown-toggle[aria-expanded=true]::after {
+    transform: rotate(225deg);
 }
 // Card
 .card-subtitle {
