@@ -1,9 +1,10 @@
 const path = require("path");
-var HtmlWebpackPlugin = require("html-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
     entry: {
         main: "./src/js/main.js",
+        chart: "./src/js/chart.js",
     },
     plugins: [
         new HtmlWebpackPlugin({
